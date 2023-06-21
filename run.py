@@ -6,8 +6,6 @@ to be able to gain a special ability of your own choice!
 def give_riddle(riddle, choices, correct_answer):
     """
     The function that controls and gives the riddles!
-    needs to add None to exit, which will be x?!
-    needs to add validation should be possible x for exit!
     """
     print(riddle)
     # prints all choices row for row!
@@ -17,12 +15,12 @@ def give_riddle(riddle, choices, correct_answer):
     while True:
         answer = input("Enter your answer (a, b, c, d) or 'x' to exit: ").lower()
 
-        if answer == 'x':
+        if answer == "x":
             return None
-        elif answer in ['a', 'b', 'c', 'd']:
+        elif answer in ["a", "b", "c", "d"]:
             break
         else:
-            print('Invalid input! Please chose a valid option!\n a, b, c, d')
+            print("Invalid input! Please chose a valid option!\n a, b, c, d")
 
     if answer == correct_answer:
         print("Correct answer!\n")
@@ -30,7 +28,6 @@ def give_riddle(riddle, choices, correct_answer):
     else:
         print("Wrong answer!\n")
         return False
-
 
 def riddleme():
     """
@@ -44,7 +41,7 @@ def riddleme():
     # This while loop make sure that you insert a name and ability that is legit to what i have told the program to do. need to add x to exit!
     while not name or not ability:
         if not name:
-            print('First you need to tell me your name. It cannot be empty or only contain numbers!')
+            print("First you need to tell me your name. It cannot be empty or only contain numbers!")
             name = input("Enter your name: ")
             if not name:
                 print("Name cannot be empty. Please try again.\n")
@@ -55,7 +52,7 @@ def riddleme():
                 continue
 
         if not ability:
-            print('Then you also need to tell me which ability you want to learn. Cannot be empty or only contain numbers!')
+            print("Then you also need to tell me which ability you want to learn. Cannot be empty or only contain numbers!")
             ability = input("Enter your ability: ")
             if not ability:
                 print("Ability cannot be empty. Please try again.\n")
@@ -86,20 +83,25 @@ def riddleme():
             "correct_answer": "c"
         }
     ]
+    def ask_riddle():
+        for riddle in riddles:
+            while True:
+            # Asks the riddle and get the results through the give_riddle function, where the verification logic hides!
+            # need to end the loop with a victory screen!!!
+                result = give_riddle(riddle["riddle"],riddle["choices"],riddle["correct_answer"])
+                if result is True:
+                    print("True")
+                    break
+                elif result is False:
+                    # right now continues until i get the right answer, will have to give a choice of exit or try again that sends user back to the start!
+                    gameover = input(f"{name} would you like to restart if so 'y' for yes else 'n' to exit (y/n): ").lower()
+                    if gameover == "n":
+                        return
+                    else:
+                        ask_riddle()
+                elif result is None:
+                    print(f"Exit! Bye bye {name.capitalize()}, now you wont get the ability to {ability.capitalize()}.")
+                    return None
+    ask_riddle()
 
-    for riddle in riddles:
-        while True:
-        # Asks the riddle and get the results through the give_riddle function, where the verification logic hides!
-        # need to end the loop with a victory screen!!!
-            result = give_riddle(riddle['riddle'],riddle['choices'],riddle['correct_answer'])
-            if result is True:
-                print("True")
-                break
-            elif result is False:
-                # right now continues until i get the right answer, will have to give a choice of exit or try again that sends user back to the start!
-                print("False")
-                continue
-            elif result is None:
-                print(f'Exit! Bye bye {name.capitalize()}, now you wont get the ability to {ability.capitalize()}.')
-                return
 riddleme()
