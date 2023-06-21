@@ -14,7 +14,14 @@ def give_riddle(riddle, choices, correct_answer):
     # prints all choices row for row!
     for choice in choices:
         print(choice)
-    answer = input("Enter your answer (a, b, c, d): ")
+    # making sure the letter entered is a valid option!!
+    while True:
+        answer = input("Enter your answer (a, b, c, d): ")
+
+        if answer in ['a', 'b', 'c', 'd']:
+            break
+        else:
+            print('Invalid input! Please choise a valid option!\n a, b, c, d')
 
     if answer == correct_answer:
         print("Correct answer!")
