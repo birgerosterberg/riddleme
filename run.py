@@ -6,9 +6,8 @@ to be able to gain a special ability of your own choice!
 def give_riddle(riddle, choices, correct_answer):
     """
     The function that controls and gives the riddles!
-    need to add verification for choices.
     needs to add None to exit, which will be x?!
-    needs to add validation for which letter is entered... a b c or d should be possible and x for exit!
+    needs to add validation should be possible x for exit!
     """
     print(riddle)
     # prints all choices row for row!
@@ -16,18 +15,18 @@ def give_riddle(riddle, choices, correct_answer):
         print(choice)
     # making sure the letter entered is a valid option!!
     while True:
-        answer = input("Enter your answer (a, b, c, d): ")
+        answer = input("Enter your answer (a, b, c, d): ").lower()
 
         if answer in ['a', 'b', 'c', 'd']:
             break
         else:
-            print('Invalid input! Please choise a valid option!\n a, b, c, d')
+            print('Invalid input! Please chose a valid option!\n a, b, c, d')
 
     if answer == correct_answer:
-        print("Correct answer!")
+        print("Correct answer!\n")
         return True
     else:
-        print("Wrong answer!")
+        print("Wrong answer!\n")
         return False
 
 
@@ -35,9 +34,9 @@ def riddleme():
     """
     The main game function, that runs the riddleme game!
     """
-    print("Welcome to the cave of mysteries, i have an amazing gift!")
-    print("I can grant you an ability of your own choice, but to get it you will have to prove worthy!")
-    print("You have to answer a few riddles that will test you.")
+    print("Welcome to the cave of mysteries, i have an amazing gift!\n")
+    print("I can grant you an ability of your own choice, but to get it you will have to prove worthy!\n")
+    print("You have to answer a few riddles that will test you.\n")
     name = ""
     ability = ""
     # This while loop make sure that you insert a name and ability that is legit to what i have told the program to do. need to add x to exit!
@@ -46,10 +45,10 @@ def riddleme():
             print('First you need to tell me your name. It cannot be empty or only contain numbers! press "x" to exit')
             name = input("Enter your name: ")
             if not name:
-                print("Name cannot be empty. Please try again.")
+                print("Name cannot be empty. Please try again.\n")
                 continue
             if name.isdigit():
-                print("Name cannot be purely numeric. Please try again.")
+                print("Name cannot be purely numeric. Please try again.\n")
                 name = ""
                 continue
 
@@ -57,15 +56,15 @@ def riddleme():
             print('Then you also need to tell me which ability you want to learn. Cannot be empty or only contain numbers! press "x" to exit')
             ability = input("Enter your ability: ")
             if not ability:
-                print("Ability cannot be empty. Please try again.")
+                print("Ability cannot be empty. Please try again.\n")
                 continue
             if ability.isdigit():
-                print("Ability cannot be purely numeric. Please try again.")
+                print("Ability cannot be purely numeric. Please try again.\n")
                 ability = ""
                 continue
-    print(f"Hi there {name} i see you wish to have the ability to {ability}.") 
+    print(f"Hi there {name.capitalize()} i see you wish to have the ability to {ability.capitalize()}.\n")
     print("Great Choice!")
-    print("But to be able to keep this ability you need to pass a few riddles, to be worthy!")
+    print("But to be able to keep this ability you need to pass a few riddles, to be worthy!\n")
 
     # Where i store the riddles
     riddles = [
