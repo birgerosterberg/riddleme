@@ -3,17 +3,26 @@ This is a riddle game that will take you through a test,
 to be able to gain a special ability of your own choice!
 """
 
-def give_riddle(riddle):
+def give_riddle(riddle, choices, correct_answer):
     """
     The function that controls and gives the riddles!
-    need to add choices and correct_answers.
-    need to add verification for correct answer and for choices.
-    needs to add True for correct answer or False for wrong answer and None to exit?!
+    need to add verification for choices.
+    needs to add None to exit, which will be x?!
     needs to add validation for which letter is entered... a b c or d should be possible and x for exit!
     """
     print(riddle)
-    # Test with changing True, False and None
-    return True
+    # prints all choices row for row!
+    for choice in choices:
+        print(choice)
+    answer = input("Enter your answer (a, b, c, d): ")
+
+    if answer == correct_answer:
+        print("Correct answer!")
+        return True
+    else:
+        print("Wrong answer!")
+        return False
+
 
 def riddleme():
     """
@@ -55,13 +64,13 @@ def riddleme():
     riddles = [
         {
             "riddle": "first What goes and goes but never gets where its ment to go?",
-            "choices":["a. tomato", "b. restless person", "c. the clock", "d. life"],
-            "correct_answer": "c"
+            "choices":["a. the clock", "b. restless person", "c. tomato", "d. life"],
+            "correct_answer": "a"
         },
         {
             "riddle": "second What goes and goes but never gets where its ment to go?",
-            "choices":["a. tomato", "b. restless person", "c. the clock", "d. life"],
-            "correct_answer": "c"
+            "choices":["a. tomato", "b. the clock", "c. restless person", "d. life"],
+            "correct_answer": "b"
         },
         {
             "riddle": "third What goes and goes but never gets where its ment to go?",
@@ -73,14 +82,15 @@ def riddleme():
     for riddle in riddles:
         while True:
         # Asks the riddle and get the results through the give_riddle function, where the verification logic hides!
-        # need to add choices and correct_answers to the loop.
-            result = give_riddle(riddle['riddle'])
+        # need to end the loop with a victory screen!!!
+            result = give_riddle(riddle['riddle'],riddle['choices'],riddle['correct_answer'])
             if result is True:
                 print("True")
                 break
             elif result is False:
+                # right now continues until i get the right answer, will have to give a choice of exit or try again that sends user back to the start!
                 print("False")
-                break
+                continue
             elif result is None:
                 print('nothing! made for exit! break here else endlessssssssssloooooop')
                 break
