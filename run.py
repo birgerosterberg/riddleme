@@ -15,9 +15,11 @@ def give_riddle(riddle, choices, correct_answer):
         print(choice)
     # making sure the letter entered is a valid option!!
     while True:
-        answer = input("Enter your answer (a, b, c, d): ").lower()
+        answer = input("Enter your answer (a, b, c, d) or 'x' to exit: ").lower()
 
-        if answer in ['a', 'b', 'c', 'd']:
+        if answer == 'x':
+            return None
+        elif answer in ['a', 'b', 'c', 'd']:
             break
         else:
             print('Invalid input! Please chose a valid option!\n a, b, c, d')
@@ -42,7 +44,7 @@ def riddleme():
     # This while loop make sure that you insert a name and ability that is legit to what i have told the program to do. need to add x to exit!
     while not name or not ability:
         if not name:
-            print('First you need to tell me your name. It cannot be empty or only contain numbers! press "x" to exit')
+            print('First you need to tell me your name. It cannot be empty or only contain numbers!')
             name = input("Enter your name: ")
             if not name:
                 print("Name cannot be empty. Please try again.\n")
@@ -53,7 +55,7 @@ def riddleme():
                 continue
 
         if not ability:
-            print('Then you also need to tell me which ability you want to learn. Cannot be empty or only contain numbers! press "x" to exit')
+            print('Then you also need to tell me which ability you want to learn. Cannot be empty or only contain numbers!')
             ability = input("Enter your ability: ")
             if not ability:
                 print("Ability cannot be empty. Please try again.\n")
@@ -98,7 +100,6 @@ def riddleme():
                 print("False")
                 continue
             elif result is None:
-                print('nothing! made for exit! break here else endlessssssssssloooooop')
-                break
-
+                print(f'Exit! Bye bye {name.capitalize()}, now you wont get the ability to {ability.capitalize()}.')
+                return
 riddleme()
