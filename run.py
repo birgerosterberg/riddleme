@@ -53,7 +53,7 @@ def riddleme():
                 "First you need to tell me your name."
                 "It cannot be empty or only contain numbers!"
             )
-            name = input("Enter your name: ")
+            name = input("Enter your name: ").strip()
             if not name:
                 print("Name cannot be empty. Please try again.\n")
                 continue
@@ -69,7 +69,7 @@ def riddleme():
                 "Then you also need to tell me which ability you want."
                 "Cannot be empty or only contain numbers!"
                 )
-            ability = input("Enter your ability: ")
+            ability = input("Enter your ability: ").strip()
             if not ability:
                 print("Ability cannot be empty. Please try again.\n")
                 continue
@@ -79,7 +79,7 @@ def riddleme():
                 continue
     print(
         f"Hi there {name.capitalize()},"
-        "i see you wish to have the ability to {ability.capitalize()}.\n"
+        f"i see you wish to have the ability to {ability.capitalize()}.\n"
         )
     print("Great Choice!")
     print(
@@ -130,9 +130,8 @@ def riddleme():
     def ability_granted():
         print(
             "This day is the day you gained the ability to "
-            f"{ability}.capitalize()!"
+            f"{ability.capitalize()}!"
             )
-
 
     def ask_riddle():
         """

@@ -5,3 +5,5 @@ Overall inspiration and ideas from:
  Buggs
   - when i insert a capitalized letter it goes false!
    - Solution: add .lower() to make sure the input is lowercased
+  - Its possible to bypass my checks by inserting blankspaces...
+    - Add .strip() behind the input to remove the blankspaces and it will be empty
