@@ -39,7 +39,7 @@ def riddleme():
     """
     print("Welcome to the cave of mysteries, i have an amazing gift!\n")
     print(
-        "I can grant you an ability of your own choice"
+        "I can grant you an ability of your own choice "
         "but you will have to prove worthy!\n"
         )
     print("You have to answer a few riddles that will test you.\n")
@@ -58,7 +58,9 @@ def riddleme():
                 print("Name cannot be empty. Please try again.\n")
                 continue
             if name.isdigit():
-                print("Name cannot be purely numeric. Please try again.\n")
+                print(
+                    "Name cannot be purely numeric. Please try again.\n"
+                    )
                 name = ""
                 continue
 
@@ -120,19 +122,17 @@ def riddleme():
                  "b. restless person",
                  "c. the clock",
                  "d. life"],
+
             "correct_answer": "c"
         },
-        {
-            "riddle":
-                f"Wow {name.capitalize()} you made it through the test,"
-                f"the ability to {ability.capitalize()} is now yours,"
-                "use it with good intention! Press the button 'e' to exit!",
-
-            "choices": [],
-
-            "correct_answer": "e"
-        }
     ]
+
+    def ability_granted():
+        print(
+            "This day is the day you gained the ability to "
+            f"{ability}.capitalize()!"
+            )
+
 
     def ask_riddle():
         """
@@ -141,31 +141,44 @@ def riddleme():
         need to end the loop with a victory screen!!!
         """
 
+        # Make sure 5 questions been asked and answered correctly!
+        how_many_riddles = 0
+
         for riddle in riddles:
+
             while True:
+
                 result = give_riddle(
                     riddle["riddle"],
                     riddle["choices"],
                     riddle["correct_answer"])
+
                 if result is True:
-                    print("True")
+                    how_many_riddles += 1
+                    print(f"True {how_many_riddles} ")
+                    if how_many_riddles == 3:
+                        ability_granted()
                     break
+
                 elif result is False:
                     # right now continues until i get the right answer,
                     # have to give a choice of exit or try again that
                     # sends user back to the start!
 
+                    how_many_riddles = 0
                     gameover = input(
                         f"{name} would you like to restart if so "
                         "'y' for yes else 'n' to exit (y/n): "
                     ).lower()
+
                     if gameover == "n":
                         return
                     else:
                         ask_riddle()
+
                 elif result is None:
-                    print(f"Exit! Bye bye {name.capitalize()}.")
                     print(
+                        f"Exit! Bye bye {name.capitalize()}.\n"
                         "now you wont get the ability to "
                         f"{ability.capitalize()}."
                           )
