@@ -3,6 +3,7 @@ This is a riddle game that will take you through a test,
 to be able to gain a special ability of your own choice!
 """
 
+
 def give_riddle(riddle, choices, correct_answer):
     """
     The function that controls and gives the riddles!
@@ -28,6 +29,7 @@ def give_riddle(riddle, choices, correct_answer):
     else:
         print("Wrong answer!\n")
         return False
+
 
 def riddleme():
     """
@@ -69,26 +71,36 @@ def riddleme():
     riddles = [
         {
             "riddle": "first What goes and goes but never gets where its ment to go?",
-            "choices":["a. the clock", "b. restless person", "c. tomato", "d. life"],
+            "choices": ["a. the clock", "b. restless person", "c. tomato", "d. life"],
             "correct_answer": "a"
         },
         {
             "riddle": "second What goes and goes but never gets where its ment to go?",
-            "choices":["a. tomato", "b. the clock", "c. restless person", "d. life"],
+            "choices": ["a. tomato", "b. the clock", "c. restless person", "d. life"],
             "correct_answer": "b"
         },
         {
             "riddle": "third What goes and goes but never gets where its ment to go?",
-            "choices":["a. tomato", "b. restless person", "c. the clock", "d. life"],
+            "choices": ["a. tomato", "b. restless person", "c. the clock", "d. life"],
             "correct_answer": "c"
+        },
+        {
+            "riddle": f"Wow {name.capitalize()} you made it through the test, the ability to {ability.capitalize()} is now yours, use it with good intention! Press the button 'e' to exit!",
+            "choices": [],
+            "correct_answer": "e"
         }
     ]
+
     def ask_riddle():
+        """
+        Asks the riddle and get the results through the give_riddle function, where
+        the verification logic hides!
+        need to end the loop with a victory screen!!!
+        """
+
         for riddle in riddles:
             while True:
-            # Asks the riddle and get the results through the give_riddle function, where the verification logic hides!
-            # need to end the loop with a victory screen!!!
-                result = give_riddle(riddle["riddle"],riddle["choices"],riddle["correct_answer"])
+                result = give_riddle(riddle["riddle"], riddle["choices"], riddle["correct_answer"])
                 if result is True:
                     print("True")
                     break
@@ -103,5 +115,6 @@ def riddleme():
                     print(f"Exit! Bye bye {name.capitalize()}, now you wont get the ability to {ability.capitalize()}.")
                     return None
     ask_riddle()
+
 
 riddleme()
