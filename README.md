@@ -124,23 +124,29 @@ By structuring the riddles as dictionaries within a list, i have created an easi
 ---
 
 ## Testing 
-  ### Input testing
- - name / ability - enter nothing or just blankspaces.
-   - an error is presented as it should, ask you to write again.
- - name / ability - enter only numbers.
-   - an error is presented as it should, ask you to write again.
- - name / ability - enter a proper name or ability.
-   - Get ot the next step. uppercase your firstletter. Works as intended.
- - answer choices - insert something that is not a, b, c, d or x.
-   - an error is presented as it should, ask you to write again.
- - answer choices - insert a, b, c, d or x.
-   - verification works as intended, if right answer next riddle, if wrong answer. gameover! if x it closes the program.
+### Input testing
+
+- Name / ability - enter nothing or just blankspaces.
+    > An error is presented as it should, ask you to write again.
+
+- Name / ability - enter only numbers.
+   > An error is presented as it should, ask you to write again.
+
+- Name / ability - enter a proper name or ability.
+   > Get to the next step. uppercase your firstletter. Works as intended.
+
+- Answer choices - insert something that is not a, b, c, d or x.
+    > An error is presented as it should, ask you to write again.
+
+- Answer choices - insert a, b, c, d or x.
+   > Verification works as intended, if right answer next riddle, if wrong answer. gameover! if x it closes the program.
 
 - Riddle test - correct_answer 
-  - Riddles, all correct answer works.
+  > Riddles, all correct answer works.
+  > Answer all five riddles correct and the end function runs. as it  should!
 
-- X for Exit
-  - Works as intended.
+- x for Exit
+  > Works as intended.
 
 ### Buggs
   - Problem: when i insert a capitalized letter as answer it goes false even if its right!
@@ -177,10 +183,17 @@ By structuring the riddles as dictionaries within a list, i have created an easi
   - Was used to help me understand the flow of things when it was breaking.
 
 ## Deployment
+### Version Control
+The project was created using Visual Studio code and pushed to GitHub to the remote repository riddleme.
+
+I have developed this project using two different Windows computers: one laptop and one stationary desktop. I have kept the code up to date throughout my work by a tool called GitKraken, which provides an outstanding overview of my workflow. Its graphical user interface allows me to track my commits throughout the entire project and clearly indicates which system i used for each commit. This fortunate knowledge helps me locate the original files easily if i need to rework something.
+
+During this process i have also had the choice to use the terminal in GitKraken to use commands such as git pull, git add, git commit and git push. However i rarely been using this.
+
 ### Heroku
 
 
-## Overall inspiration, ideas and content from:
+## Inspiration, ideas, tutorials and content from:
  - https://realpython.com/python-quiz-application/
  - https://medium.com/@rahulmallah785671/creating-an-engaging-quiz-game-with-python-a-step-by-step-guide-ea11bd76f159
  - https://www.geeksforgeeks.org/print-colors-python-terminal/
@@ -189,5 +202,8 @@ By structuring the riddles as dictionaries within a list, i have created an easi
  - https://play.howstuffworks.com/quiz/test-your-mental-mettle-with-these-ridiculous-riddles
  - https://www.stackoverflow.com/
 
+## Credits
+My mentor Gareth McGill \
+https://www.stackoverflow.com/ - all the amazing contributors making life easy for everyone else!
 
 
