@@ -28,7 +28,7 @@ def give_riddle(riddle, choices, correct_answer):
             else:
                 raise ValueError(
                     Fore.RED +
-                    "\nInvalid input, please chose a valid option: a, b, c, or d\n"
+                    "Invalid input, chose a valid option: a, b, c, or d\n"
                     + Style.RESET_ALL
                     )
         except ValueError as error:
@@ -44,12 +44,15 @@ def riddleme():
     """
     The main game function, that runs the riddleme game!
     """
-    print("Welcome to the cave of mysteries, i have an amazing gift!\n")
+    print(
+        Fore.BLUE +
+        "Welcome to the cave of mysteries, i have an amazing gift!\n")
     print(
         "I can grant you an ability of your own choice "
         "but you will have to prove worthy!\n"
         )
-    print("You have to answer a few riddles that will test you.\n")
+    print("You have to answer a few riddles that will test you.\n"
+          + Style.RESET_ALL)
     name = ""
     ability = ""
     # This while loop make sure that you insert a name and ability that is
@@ -57,34 +60,55 @@ def riddleme():
     while not name or not ability:
         if not name:
             print(
-                "First you need to tell me your name."
+                Fore.CYAN +
+                "First you need to tell me your name.\n"
                 "It cannot be empty or only contain numbers!"
+                + Style.RESET_ALL
             )
             name = input("Enter your name: ").strip()
             if not name:
-                print("Name cannot be empty. Please try again.\n")
+                print(
+                    Fore.RED +
+                    "Name cannot be empty. Please try again.\n"
+                    + Style.RESET_ALL)
                 continue
             if name.isdigit():
                 print(
+                    Fore.RED +
                     "Name cannot be purely numeric. Please try again.\n"
+                    + Style.RESET_ALL
                     )
                 name = ""
                 continue
 
         if not ability:
             print(
+                Fore.CYAN +
                 "Then you also need to tell me which ability you want."
+            )
+            print(
+                Style.DIM +
                 "Cannot be empty or only contain numbers!"
+                + Style.RESET_ALL
                 )
             ability = input("Enter your ability: ").strip()
             if not ability:
-                print("Ability cannot be empty. Please try again.\n")
+                print(
+                    Fore.RED +
+                    "Ability cannot be empty. Please try again.\n"
+                    + Style.RESET_ALL
+                    )
                 continue
             if ability.isdigit():
-                print("Ability cannot be purely numeric. Please try again.\n")
+                print(
+                    Fore.RED +
+                    "Ability cannot be purely numeric. Please try again.\n"
+                    + Style.RESET_ALL
+                    )
                 ability = ""
                 continue
     print(
+        Fore.BLUE +
         f"Hi there {name.capitalize()},"
         f"i see you wish to have the ability to {ability.capitalize()}.\n"
         )
@@ -92,6 +116,7 @@ def riddleme():
     print(
         "But to be able to keep this ability you need to pass a few riddles,"
         "to be worthy!\n"
+        + Style.RESET_ALL
         )
 
     # Where i store the riddles
@@ -162,7 +187,10 @@ def riddleme():
 
                     if result is True:
                         how_many_riddles += 1
-                        print("Correct answer!\n")
+                        print(
+                            Fore.GREEN + "Correct answer!\n"
+                            + Style.RESET_ALL
+                              )
                         if how_many_riddles == 3:
                             ability_granted()
                             return
