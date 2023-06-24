@@ -12,11 +12,12 @@ This is a small game/quiz that allows you to gain an ability in a magical cave. 
 ---
 ## Design and UX
 ### Color 
+- I used Colorama to make the terminal colorful.
 - When choosing colors i wanted to ensure there is sufficient separation to make it much easier to read.
 - Green, Red, Blue, Cyan and White. Very simple and mild colors that present what they need just by the color themselves.
 
 ### Art
-- As for ASCII, I wanted to add some extra flexibility, so I included ASCII art since it's a fun way to enhance the terminal experience.
+- As for ASCII, I wanted to add some extra life, so I included ASCII art since it's a fun way to enhance the terminal experience.
 
 ### User Experience
 - The user interface is designed to be straightforward, following a linear path that leaves little room for confusion, except when it comes to the riddles.
@@ -143,7 +144,7 @@ By structuring the riddles as dictionaries within a list, i have created an easi
 
 - Riddle test - correct_answer 
   > Riddles, all correct answer works.
-  > Answer all five riddles correct and the end function runs. as it  should!
+  > Answer all five riddles correct and the end function runs. as it should!
 
 - x for Exit
   > Works as intended.
@@ -160,6 +161,7 @@ By structuring the riddles as dictionaries within a list, i have created an easi
     - Solution: Clearing it in another place.
 
 ---
+
 ## Tools and Technology Used
 - HTML
   - The main structure of the site was developed using HTML.
@@ -182,9 +184,11 @@ By structuring the riddles as dictionaries within a list, i have created an easi
 - Pythontutor
   - Was used to help me understand the flow of things when it was breaking.
 
+---
+
 ## Deployment
 ### Version Control
-The project was created using Visual Studio code and pushed to GitHub to the remote repository riddleme.
+The project was created using Visual Studio Code and pushed to GitHub to the remote repository riddleme.
 
 I have developed this project using two different Windows computers: one laptop and one stationary desktop. I have kept the code up to date throughout my work by a tool called GitKraken, which provides an outstanding overview of my workflow. Its graphical user interface allows me to track my commits throughout the entire project and clearly indicates which system i used for each commit. This fortunate knowledge helps me locate the original files easily if i need to rework something.
 
@@ -193,14 +197,15 @@ During this process i have also had the choice to use the terminal in GitKraken 
 ### Heroku
 
 
-## Inspiration, ideas, tutorials and content from:
+## Inspiration, tutorials and content from:
  - https://realpython.com/python-quiz-application/
  - https://medium.com/@rahulmallah785671/creating-an-engaging-quiz-game-with-python-a-step-by-step-guide-ea11bd76f159
  - https://www.geeksforgeeks.org/print-colors-python-terminal/
  - https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/
  - https://www.geeksforgeeks.org/clear-screen-python/
  - https://play.howstuffworks.com/quiz/test-your-mental-mettle-with-these-ridiculous-riddles
- - https://www.stackoverflow.com/
+
+---
 
 ## Credits
 My mentor Gareth McGill \
