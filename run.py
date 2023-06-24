@@ -4,7 +4,7 @@ to be able to gain a special ability of your own choice!
 """
 import os
 import pyfiglet
-# Coloroma to color the text in the console
+# Colorama to color the text in the console
 from colorama import Fore, Style
 
 # clear screen from the os import!
@@ -29,7 +29,7 @@ def give_riddle(riddle, choices, correct_answer):
         try:
             answer = input(
                 Fore.GREEN +
-                "Enter your answer (a, b, c, d) or 'x' to exit: "
+                "Enter your answer (a, b, c, d) or 'x' to give up: "
                 + Style.RESET_ALL).lower()
 
             if answer == "x":
@@ -108,7 +108,7 @@ def riddleme():
             os.system('cls' if os.name == 'nt' else 'clear')
             print(
                 Fore.CYAN +
-                f"{name} in order to proceed, " 
+                f"{name.capitalize()} in order to proceed, " 
                 "please let me know which ability "
                 "you would like to receive.\n"
             )
@@ -216,8 +216,8 @@ def riddleme():
         os.system('cls' if os.name == 'nt' else 'clear')
         print(
             Fore.BLUE +
-            f"{name} this is a truly remarkable day, you have"
-            "proven to be worthy,\n its with great responsibility "
+            f"{name.capitalize()} this is a truly remarkable day, you have "
+            "proven to be worthy,\nits with great responsibility "
             "i grant you the ability to"
             )
         ability_art = pyfiglet.figlet_format(ability.capitalize())
@@ -257,13 +257,13 @@ def riddleme():
                     elif result is False:
                         how_many_riddles = 0
                         input(
-                            f"{name} you answered wrong, you are not worthy "
-                            "please press enter to exit!: "
+                            f"{name.capitalize()} you answered wrong, you are not worthy "
+                            "please press enter to leave!: "
                         ).lower()
                         return
                     elif result is None:
                         print(
-                            f"Exit! Bye bye {name.capitalize()}.\n"
+                            f"Leaving! Bye bye {name.capitalize()}.\n"
                             "now you wont get the ability to "
                             f"{ability.capitalize()}."
                             )
