@@ -2,11 +2,15 @@
 This is a riddle game that will take you through a test,
 to be able to gain a special ability of your own choice!
 """
+import os
 import pyfiglet
 from colorama import Fore, Style
 
+os.system('cls' if os.name == 'nt' else 'clear')
+
 ascii_art = pyfiglet.figlet_format("Riddle Me!")
 print(ascii_art)
+
 
 def give_riddle(riddle, choices, correct_answer):
     """
@@ -47,6 +51,7 @@ def riddleme():
     """
     The main game function, that runs the riddleme game!
     """
+    
     print(
         Fore.BLUE +
         "Welcome to the cave of mysteries, i have an amazing gift!\n")
@@ -110,6 +115,7 @@ def riddleme():
                     )
                 ability = ""
                 continue
+    os.system('cls' if os.name == 'nt' else 'clear')
     print(
         Fore.BLUE +
         f"Hi there {name.capitalize()},"
@@ -162,7 +168,7 @@ def riddleme():
         },
         {
             "riddle":
-            "Pick me up and scratch my head." 
+            "Pick me up and scratch my head."
             "I'll turn red and then black. What am I?",
 
             "choices":
@@ -189,6 +195,7 @@ def riddleme():
     ]
 
     def ability_granted():
+        os.system('cls' if os.name == 'nt' else 'clear')
         print(
             "This day is the day you gained the ability to "
             f"{ability.capitalize()}!"
