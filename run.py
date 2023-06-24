@@ -11,7 +11,7 @@ from colorama import Fore, Style
 os.system('cls' if os.name == 'nt' else 'clear')
 
 # Ascii art from the pyfiglet import!
-ascii_art = pyfiglet.figlet_format("Riddle Me!", font = "banner3-D")
+ascii_art = pyfiglet.figlet_format("Riddle Me!", font="banner3-D")
 print(ascii_art)
 input("Press enter to continue...\n")
 
@@ -70,8 +70,8 @@ def riddleme():
     print("You have only one try to get it right.")
     print(
         "You will get 4 choices to choose from.\n"
-          + Style.RESET_ALL
-          )
+        + Style.RESET_ALL
+         )
     input("Press enter to continue...\n")
     name = ""
     ability = ""
@@ -108,7 +108,7 @@ def riddleme():
             os.system('cls' if os.name == 'nt' else 'clear')
             print(
                 Fore.CYAN +
-                f"{name.capitalize()} in order to proceed, " 
+                f"{name.capitalize()} in order to proceed, "
                 "please let me know which ability "
                 "you would like to receive.\n"
             )
@@ -257,7 +257,8 @@ def riddleme():
                     elif result is False:
                         how_many_riddles = 0
                         input(
-                            f"{name.capitalize()} you answered wrong, you are not worthy "
+                            f"{name.capitalize()} you answered wrong, "
+                            "you are not worthy "
                             "please press enter to leave!: "
                         ).lower()
                         return
