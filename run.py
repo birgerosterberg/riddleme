@@ -2,8 +2,11 @@
 This is a riddle game that will take you through a test,
 to be able to gain a special ability of your own choice!
 """
+import pyfiglet
 from colorama import Fore, Style
 
+ascii_art = pyfiglet.figlet_format("Riddle Me!")
+print(ascii_art)
 
 def give_riddle(riddle, choices, correct_answer):
     """
@@ -123,40 +126,66 @@ def riddleme():
     riddles = [
         {
             "riddle":
-            "first What goes and goes but never gets where its ment to go?",
+            "What goes and goes but never gets there?",
 
             "choices":
-                ["a. the clock",
-                 "b. restless person",
-                 "c. tomato",
-                 "d. life"],
+                ["a. A Watch",
+                 "b. Restless person",
+                 "c. Tomato",
+                 "d. Life"],
 
             "correct_answer": "a"
         },
         {
             "riddle":
-            "second What goes and goes but never gets where its ment to go?",
+            "What type of lion never roars?",
 
             "choices":
-                ["a. tomato",
-                 "b. the clock",
-                 "c. restless person",
-                 "d. life"],
+                ["a. A Mountain Lion",
+                 "b. A Lion Cub",
+                 "c. A Captured Lion",
+                 "d. A Dandelion"],
 
-            "correct_answer": "b"
+            "correct_answer": "d"
         },
         {
             "riddle":
-            "third What goes and goes but never gets where its ment to go?",
+            "What can you catch but cannot throw?",
 
             "choices":
-                ["a. tomato",
-                 "b. restless person",
-                 "c. the clock",
-                 "d. life"],
+                ["a. A Boomerang",
+                 "b. A Tennis ball",
+                 "c. Your toys",
+                 "d. A Cold"],
 
-            "correct_answer": "c"
+            "correct_answer": "d"
         },
+        {
+            "riddle":
+            "Pick me up and scratch my head." 
+            "I'll turn red and then black. What am I?",
+
+            "choices":
+                ["a. A Match",
+                 "b. Candle",
+                 "c. A Match",
+                 "d. None of the above"],
+
+            "correct_answer": "a"
+        },
+        {
+            "riddle":
+            "I have a neck, but I dont have a head,"
+            " and I wear a cap. What am I?",
+
+            "choices":
+                ["a. A Ghost",
+                 "b. A Bottle",
+                 "c. A Clam",
+                 "d. A Snake"],
+
+            "correct_answer": "b"
+        }
     ]
 
     def ability_granted():
@@ -191,7 +220,7 @@ def riddleme():
                             Fore.GREEN + "Correct answer!\n"
                             + Style.RESET_ALL
                               )
-                        if how_many_riddles == 3:
+                        if how_many_riddles == 5:
                             ability_granted()
                             return
                         break

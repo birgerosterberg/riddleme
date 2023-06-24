@@ -7,6 +7,7 @@ Overall inspiration and ideas from:
  - https://www.geeksforgeeks.org/print-colors-python-terminal/
  - https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/
  - https://www.geeksforgeeks.org/clear-screen-python/
+ - https://play.howstuffworks.com/quiz/test-your-mental-mettle-with-these-ridiculous-riddles
 
  Buggs
   - when i insert a capitalized letter it goes false!
