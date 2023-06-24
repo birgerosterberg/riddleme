@@ -74,6 +74,7 @@ def riddleme():
         + Style.RESET_ALL
          )
     input("Press enter to continue...\n")
+    os.system('cls' if os.name == 'nt' else 'clear')
     name = ""
     ability = ""
     # This while loop make sure that you insert a name and ability that is
@@ -106,7 +107,6 @@ def riddleme():
                 continue
 
         if not ability:
-            os.system('cls' if os.name == 'nt' else 'clear')
             print(
                 Fore.CYAN +
                 f"{name.capitalize()} in order to proceed, "
