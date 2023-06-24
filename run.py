@@ -14,16 +14,21 @@ def give_riddle(riddle, choices, correct_answer):
         print(choice)
     # making sure the letter entered is a valid option!!
     while True:
-        answer = input(
-            "Enter your answer (a, b, c, d) or 'x' to exit: "
-            ).lower()
+        try:
+            answer = input(
+                "Enter your answer (a, b, c, d) or 'x' to exit: "
+                ).lower()
 
-        if answer == "x":
-            return None
-        elif answer in ["a", "b", "c", "d"]:
-            break
-        else:
-            print("Invalid input! Please chose a valid option!\n a, b, c, d")
+            if answer == "x":
+                return None
+            elif answer in ["a", "b", "c", "d"]:
+                break
+            else:
+                raise ValueError(
+                    "Invalid input, please chose a valid option: a, b, c, or d"
+                    )
+        except ValueError as error:
+            print(error)
 
     if answer == correct_answer:
         print("Correct answer!\n")
@@ -157,6 +162,7 @@ def riddleme():
                     print(f"True {how_many_riddles} ")
                     if how_many_riddles == 3:
                         ability_granted()
+                        return
                     break
 
                 elif result is False:
@@ -166,14 +172,15 @@ def riddleme():
 
                     how_many_riddles = 0
                     gameover = input(
-                        f"{name} would you like to restart if so "
-                        "'y' for yes else 'n' to exit (y/n): "
+                        f"{name} Sorry you answered wrong "
+                        "please press 'x' to exit!: "
                     ).lower()
 
-                    if gameover == "n":
+                    if gameover == "x":
                         return
                     else:
-                        ask_riddle()
+                        print("Not a valid key!")
+                        break
 
                 elif result is None:
                     print(
@@ -181,7 +188,7 @@ def riddleme():
                         "now you wont get the ability to "
                         f"{ability.capitalize()}."
                           )
-                    return None
+                    return
     ask_riddle()
 
 

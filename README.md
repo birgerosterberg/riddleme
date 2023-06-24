@@ -8,17 +8,13 @@ Overall inspiration and ideas from:
  - https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/
  - https://www.geeksforgeeks.org/clear-screen-python/
 
-
-
-
-
-1:38
-https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/
-1:40
-https://www.geeksforgeeks.org/clear-screen-python/
-
  Buggs
   - when i insert a capitalized letter it goes false!
    - Solution: add .lower() to make sure the input is lowercased
   - Its possible to bypass my checks by inserting blankspaces...
     - Add .strip() behind the input to remove the blankspaces and it will be empty
+
+ToDo:
+    Error Handling
+    Color
+
