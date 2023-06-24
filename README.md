@@ -109,19 +109,50 @@ This is a small game/quiz that allows you to gain an ability in a magical cave. 
 
 ---
 
-Overall inspiration and ideas from:
+## Testing 
+
+
+
+## Tools and Technology Used
+- HTML
+  - The main structure of the site was developed using HTML.
+- CSS
+  - The website was styled using CSS with an external file.
+- Python
+  - The logic was created using Python.
+  - Packages used:
+    - OS
+    - Pyfiglet
+    - Colorama
+- Visual Studio Code
+  - The website was developed with Visual Studio Code as the IDE.
+- GitHub
+  - Source code is hosted on GitHub and deployed using Git Pages.
+- GitKraken
+  - https://www.gitkraken.com/ was used to commit and push code during development.
+- Lucidchart
+  - Lucidchart was used to create the flowchart.
+- Pythontutor
+  - Was used to help me understand the flow of things when it was breaking.
+
+
+## Overall inspiration, ideas and content from:
  - https://realpython.com/python-quiz-application/
  - https://medium.com/@rahulmallah785671/creating-an-engaging-quiz-game-with-python-a-step-by-step-guide-ea11bd76f159
  - https://www.geeksforgeeks.org/print-colors-python-terminal/
  - https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/
  - https://www.geeksforgeeks.org/clear-screen-python/
  - https://play.howstuffworks.com/quiz/test-your-mental-mettle-with-these-ridiculous-riddles
+ - https://www.stackoverflow.com/
 
- Buggs
+ ## Buggs
   - when i insert a capitalized letter it goes false!
     - Solution: add .lower() to make sure the input is lowercased
   - Its possible to bypass my checks by inserting blankspaces...
     - Add .strip() behind the input to remove the blankspaces and it will be empty
   - Answering question with the right answer but followed by a blankstep = error...
     - solved with .strip()
+  - When i add os.system('cls' if os.name == 'nt' else 'clear') to clear before name and ability it makes the 
+    verification on the name and ability input stop working!
+    - solved with removing it and putting it in another place.
 
