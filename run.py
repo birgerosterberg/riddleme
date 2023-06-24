@@ -2,6 +2,7 @@
 This is a riddle game that will take you through a test,
 to be able to gain a special ability of your own choice!
 """
+from colorama import Fore, Style
 
 
 def give_riddle(riddle, choices, correct_answer):
@@ -16,8 +17,9 @@ def give_riddle(riddle, choices, correct_answer):
     while True:
         try:
             answer = input(
+                Fore.GREEN +
                 "Enter your answer (a, b, c, d) or 'x' to exit: "
-                ).lower()
+                + Style.RESET_ALL).lower()
 
             if answer == "x":
                 return None
@@ -25,16 +27,16 @@ def give_riddle(riddle, choices, correct_answer):
                 break
             else:
                 raise ValueError(
-                    "Invalid input, please chose a valid option: a, b, c, or d"
+                    Fore.RED +
+                    "\nInvalid input, please chose a valid option: a, b, c, or d\n"
+                    + Style.RESET_ALL
                     )
         except ValueError as error:
             print(error)
 
     if answer == correct_answer:
-        print("Correct answer!\n")
         return True
     else:
-        print("Wrong answer!\n")
         return False
 
 
@@ -151,44 +153,41 @@ def riddleme():
         for riddle in riddles:
 
             while True:
+                try:
+                    result = give_riddle(
+                        riddle["riddle"],
+                        riddle["choices"],
+                        riddle["correct_answer"]
+                        )
 
-                result = give_riddle(
-                    riddle["riddle"],
-                    riddle["choices"],
-                    riddle["correct_answer"])
-
-                if result is True:
-                    how_many_riddles += 1
-                    print(f"True {how_many_riddles} ")
-                    if how_many_riddles == 3:
-                        ability_granted()
-                        return
-                    break
-
-                elif result is False:
-                    # right now continues until i get the right answer,
-                    # have to give a choice of exit or try again that
-                    # sends user back to the start!
-
-                    how_many_riddles = 0
-                    gameover = input(
-                        f"{name} Sorry you answered wrong "
-                        "please press 'x' to exit!: "
-                    ).lower()
-
-                    if gameover == "x":
-                        return
-                    else:
-                        print("Not a valid key!")
+                    if result is True:
+                        how_many_riddles += 1
+                        print("Correct answer!\n")
+                        if how_many_riddles == 3:
+                            ability_granted()
+                            return
                         break
 
-                elif result is None:
-                    print(
-                        f"Exit! Bye bye {name.capitalize()}.\n"
-                        "now you wont get the ability to "
-                        f"{ability.capitalize()}."
-                          )
-                    return
+                    elif result is False:
+                        how_many_riddles = 0
+                        input(
+                            f"{name} Sorry you answered wrong "
+                            "please press enter to exit!: "
+                        ).lower()
+                        return
+                    elif result is None:
+                        print(
+                            f"Exit! Bye bye {name.capitalize()}.\n"
+                            "now you wont get the ability to "
+                            f"{ability.capitalize()}."
+                            )
+                        return
+                    else:
+                        raise ValueError(
+                            "Something went very wrong?!"
+                            )
+                except ValueError as error:
+                    print(error)
     ask_riddle()
 
 
