@@ -13,6 +13,7 @@ os.system('cls' if os.name == 'nt' else 'clear')
 # Ascii art from the pyfiglet import!
 ascii_art = pyfiglet.figlet_format("Riddle Me!", font = "banner3-D")
 print(ascii_art)
+input("Press enter to continue...\n")
 
 
 def give_riddle(riddle, choices, correct_answer):
@@ -57,26 +58,36 @@ def riddleme():
 
     print(
         Fore.BLUE +
-        "Welcome to the cave of mysteries, i have an amazing gift!\n")
+        "Welcome to the Cave of Mysteries! I have an amazing gift for you.\n")
     print(
-        "I can grant you an ability of your own choice\n"
-        "but you will have to prove worthy!\n"
+        "I can grant you an ability of your choice, "
+        "but first,\nyou must prove yourself worthy.\n"
         )
-    print("Answer correct on these riddles and you will prove yourself!\n"
-          + Style.RESET_ALL)
-    input("Press enter to continue...")
+    print(
+        "Answer these riddles correctly, and you will prove yourself!\n"
+          )
+    print("The rules are very simple...")
+    print("You have only one try to get it right.")
+    print(
+        "You will get 4 choices to choose from.\n"
+          + Style.RESET_ALL
+          )
+    input("Press enter to continue...\n")
     name = ""
     ability = ""
     # This while loop make sure that you insert a name and ability that is
-    # legit to what i have told the program to do. need to add x to exit!
+    # legit to what i have told the program to do. and 'x' to exit!
     while not name or not ability:
         if not name:
             print(
                 Fore.CYAN +
                 "First i need to know your name.\n"
-                "It cannot be empty or only contain numbers!"
-                + Style.RESET_ALL
             )
+            print(
+                Style.DIM +
+                "It cannot be empty or only contain numbers!\n"
+                + Style.RESET_ALL
+                )
             name = input("Enter your name: ").strip()
             if not name:
                 print(
@@ -94,13 +105,16 @@ def riddleme():
                 continue
 
         if not ability:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print(
                 Fore.CYAN +
-                "Then you also need to tell me which ability you want."
+                f"{name} in order to proceed, " 
+                "please let me know which ability "
+                "you would like to receive.\n"
             )
             print(
                 Style.DIM +
-                "Cannot be empty or only contain numbers!"
+                "It cannot be empty or only contain numbers!\n"
                 + Style.RESET_ALL
                 )
             ability = input("Enter your ability: ").strip()
@@ -122,7 +136,7 @@ def riddleme():
     os.system('cls' if os.name == 'nt' else 'clear')
     print(
         Fore.BLUE +
-        f"Hi there {name.capitalize()}, "
+        f"Okey, {name.capitalize()}, "
         f"i see you wish to have the ability to {ability.capitalize()}.\n"
         )
     print("Great Choice!")
