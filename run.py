@@ -14,6 +14,7 @@ os.system('cls' if os.name == 'nt' else 'clear')
 ascii_art = pyfiglet.figlet_format("Riddle Me!", font="banner3-D")
 print(ascii_art)
 input("Press enter to continue...\n")
+os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def give_riddle(riddle, choices, correct_answer):
@@ -30,7 +31,7 @@ def give_riddle(riddle, choices, correct_answer):
             answer = input(
                 Fore.GREEN +
                 "Enter your answer (a, b, c, d) or 'x' to give up: "
-                + Style.RESET_ALL).lower()
+                + Style.RESET_ALL).lower().strip()
 
             if answer == "x":
                 return None
