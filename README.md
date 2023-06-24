@@ -46,8 +46,10 @@ This is a small game/quiz that allows you to gain an ability in a magical cave. 
 
  #### Game Instruction and Welcome
     - The game begins with a welcoming text that outlines what you can expect from the game.
-    - It provides you with the motivation behind playing the game, highlighting the reasons why you should press enter again.
-    - Following that, there is a concise and straightforward explanation of the rules, keeping them minimal and easy to understand.
+    - It provides you with the motivation behind playing the game,
+      highlighting the reasons why you should press enter again.
+    - Following that, there is a concise and straightforward explanation of the rules,
+      keeping them minimal and easy to understand.
 
  ![welcomescreenhi](assets/readme/wshi.png)
 
@@ -68,7 +70,8 @@ This is a small game/quiz that allows you to gain an ability in a magical cave. 
 ---
 
 #### Riddle
-    - After you have put in your name and ability you will be greeted with your name and your ability will be mentioned.
+    - After you have put in your name and ability you will be greeted with your
+      name and your ability will be mentioned.
     - Once again you will be reminded that you need to pass the test of riddles to be worthy!
     - The Riddle will be presented with four choices to chose from
     - The alternatives will be a, b, c and d
@@ -79,7 +82,8 @@ This is a small game/quiz that allows you to gain an ability in a magical cave. 
 ---
 
 #### Right Answer
-    - When you get the right answer you will be handed a green correct answer message and the next riddle will be presented to you.
+    - When you get the right answer you will be handed a green correct answer
+      message and the next riddle will be presented to you.
 
 ![riddle correct](assets/readme/riddlecorrect.png)
 
@@ -109,10 +113,47 @@ This is a small game/quiz that allows you to gain an ability in a magical cave. 
 
 ---
 
+## Data Model
+
+By structuring the riddles as dictionaries within a list, i have created an easily manageable data model. This approach allows for convenient addition, removal, and modification of the riddles being asked. The chosen data structure offers flexibility, making it effortless to add as many riddles as desired at any time.
+
+  - riddle - Stores the riddle.
+  - choices - Stores the available choices connected to the riddle.
+  - correct_answer - Stores the correct answer connected to the riddle, allowing for easy comparison to determine if your choice is correct.
+
+---
+
 ## Testing 
+  ### Input testing
+ - name / ability - enter nothing or just blankspaces.
+   - an error is presented as it should, ask you to write again.
+ - name / ability - enter only numbers.
+   - an error is presented as it should, ask you to write again.
+ - name / ability - enter a proper name or ability.
+   - Get ot the next step. uppercase your firstletter. Works as intended.
+ - answer choices - insert something that is not a, b, c, d or x.
+   - an error is presented as it should, ask you to write again.
+ - answer choices - insert a, b, c, d or x.
+   - verification works as intended, if right answer next riddle, if wrong answer. gameover! if x it closes the program.
 
+- Riddle test - correct_answer 
+  - Riddles, all correct answer works.
 
+- X for Exit
+  - Works as intended.
 
+### Buggs
+  - Problem: when i insert a capitalized letter as answer it goes false even if its right!
+    - Solution: add .lower() to make sure the input is lowercased.
+  - Problem: Its possible to bypass my checks by inserting blankspaces...
+    - Solution: Add .strip() behind the input to remove the blankspaces and it will be empty.
+  - Problem: Answering question with the right answer but followed by a blankstep = error...
+    - Solution: solved with .strip() after the input.
+  - Problem: When i add "os.system('cls' if os.name == 'nt' else 'clear')" to clear before name and ability it makes the 
+    verification on the name and ability input stop working!
+    - Solution: Clearing it in another place.
+
+---
 ## Tools and Technology Used
 - HTML
   - The main structure of the site was developed using HTML.
@@ -135,6 +176,9 @@ This is a small game/quiz that allows you to gain an ability in a magical cave. 
 - Pythontutor
   - Was used to help me understand the flow of things when it was breaking.
 
+## Deployment
+### Heroku
+
 
 ## Overall inspiration, ideas and content from:
  - https://realpython.com/python-quiz-application/
@@ -145,14 +189,5 @@ This is a small game/quiz that allows you to gain an ability in a magical cave. 
  - https://play.howstuffworks.com/quiz/test-your-mental-mettle-with-these-ridiculous-riddles
  - https://www.stackoverflow.com/
 
- ## Buggs
-  - when i insert a capitalized letter it goes false!
-    - Solution: add .lower() to make sure the input is lowercased
-  - Its possible to bypass my checks by inserting blankspaces...
-    - Add .strip() behind the input to remove the blankspaces and it will be empty
-  - Answering question with the right answer but followed by a blankstep = error...
-    - solved with .strip()
-  - When i add os.system('cls' if os.name == 'nt' else 'clear') to clear before name and ability it makes the 
-    verification on the name and ability input stop working!
-    - solved with removing it and putting it in another place.
+
 

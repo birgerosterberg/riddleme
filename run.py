@@ -2,7 +2,11 @@
 This is a riddle game that will take you through a test,
 to be able to gain a special ability of your own choice!
 """
+
+
+# to be able to clear the terminal
 import os
+# To make the nice ascii art!
 import pyfiglet
 # Colorama to color the text in the console
 from colorama import Fore, Style
@@ -228,7 +232,6 @@ def riddleme():
         """
         Asks the riddle and get the results through the give_riddle function,
         where the verification logic hides!
-        need to end the loop with a victory screen!!!
         """
 
         # Make sure 5 questions been asked and answered correctly!
