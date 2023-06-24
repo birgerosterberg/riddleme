@@ -4,11 +4,14 @@ to be able to gain a special ability of your own choice!
 """
 import os
 import pyfiglet
+# Coloroma to color the text in the console
 from colorama import Fore, Style
 
+# clear screen from the os import!
 os.system('cls' if os.name == 'nt' else 'clear')
 
-ascii_art = pyfiglet.figlet_format("Riddle Me!")
+# Ascii art from the pyfiglet import!
+ascii_art = pyfiglet.figlet_format("Riddle Me!", font = "banner3-D")
 print(ascii_art)
 
 
@@ -51,16 +54,17 @@ def riddleme():
     """
     The main game function, that runs the riddleme game!
     """
-    
+
     print(
         Fore.BLUE +
         "Welcome to the cave of mysteries, i have an amazing gift!\n")
     print(
-        "I can grant you an ability of your own choice "
+        "I can grant you an ability of your own choice\n"
         "but you will have to prove worthy!\n"
         )
-    print("You have to answer a few riddles that will test you.\n"
+    print("Answer correct on these riddles and you will prove yourself!\n"
           + Style.RESET_ALL)
+    input("Press enter to continue...")
     name = ""
     ability = ""
     # This while loop make sure that you insert a name and ability that is
@@ -69,7 +73,7 @@ def riddleme():
         if not name:
             print(
                 Fore.CYAN +
-                "First you need to tell me your name.\n"
+                "First i need to know your name.\n"
                 "It cannot be empty or only contain numbers!"
                 + Style.RESET_ALL
             )
@@ -118,12 +122,12 @@ def riddleme():
     os.system('cls' if os.name == 'nt' else 'clear')
     print(
         Fore.BLUE +
-        f"Hi there {name.capitalize()},"
+        f"Hi there {name.capitalize()}, "
         f"i see you wish to have the ability to {ability.capitalize()}.\n"
         )
     print("Great Choice!")
     print(
-        "But to be able to keep this ability you need to pass a few riddles,"
+        "But to be able to keep this ability you need to pass a few riddles, "
         "to be worthy!\n"
         + Style.RESET_ALL
         )
@@ -197,9 +201,13 @@ def riddleme():
     def ability_granted():
         os.system('cls' if os.name == 'nt' else 'clear')
         print(
-            "This day is the day you gained the ability to "
-            f"{ability.capitalize()}!"
+            Fore.BLUE +
+            f"{name} this is a truly remarkable day, you have"
+            "proven to be worthy,\n its with great responsibility "
+            "i grant you the ability to"
             )
+        ability_art = pyfiglet.figlet_format(ability.capitalize())
+        print(ability_art + Style.RESET_ALL)
 
     def ask_riddle():
         """
@@ -235,7 +243,7 @@ def riddleme():
                     elif result is False:
                         how_many_riddles = 0
                         input(
-                            f"{name} Sorry you answered wrong "
+                            f"{name} you answered wrong, you are not worthy "
                             "please press enter to exit!: "
                         ).lower()
                         return
