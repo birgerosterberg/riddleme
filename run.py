@@ -34,7 +34,7 @@ def give_riddle(riddle, choices, correct_answer):
         try:
             answer = input(
                 Fore.GREEN +
-                "Enter your answer (a, b, c, d) or 'x' to give up: "
+                "Enter your answer (a, b, c, d) or 'x' to give up: \n"
                 + Style.RESET_ALL).lower().strip()
 
             if answer == "x":
@@ -94,7 +94,7 @@ def riddleme():
                 "It cannot be empty or only contain numbers!\n"
                 + Style.RESET_ALL
                 )
-            name = input("Enter your name: ").strip()
+            name = input("Enter your name: \n").strip()
             if not name:
                 print(
                     Fore.RED +
@@ -122,7 +122,7 @@ def riddleme():
                 "It cannot be empty or only contain numbers!\n"
                 + Style.RESET_ALL
                 )
-            ability = input("Enter your ability: ").strip()
+            ability = input("Enter your ability: \n").strip()
             if not ability:
                 print(
                     Fore.RED +
@@ -263,7 +263,7 @@ def riddleme():
                         input(
                             f"{name.capitalize()} you answered wrong, "
                             "you are not worthy "
-                            "please press enter to leave!: "
+                            "please press enter to leave!: \n"
                         ).lower()
                         return
                     elif result is None:
