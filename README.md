@@ -1,6 +1,7 @@
 # Riddle Me!
 This is a small game/quiz that allows you to gain an ability in a magical cave. However, in order to obtain the ability, you must correctly answer a series of riddles.
-
+Live Site is: 
+https://riddle-my-ability-61bcefb6fcc4.herokuapp.com/
 ---
 
 ## How To Play?
