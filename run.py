@@ -284,7 +284,12 @@ def riddleme(name, ability):
                                 ask_riddle()
                                 break
                             elif gameover == 'n':
-                                exit()
+                                        print(
+                                            f"Leaving! Bye bye {name.capitalize()}.\n"
+                                            "now you wont get the ability to "
+                                            f"{ability.capitalize()}."
+                                        )
+                                        exit()
                             else:
                                 os.system('cls' if os.name ==
                                           'nt' else 'clear')

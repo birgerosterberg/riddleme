@@ -1,7 +1,8 @@
 # Riddle Me!
 
-This is a small game/quiz that allows you to gain an ability in a magical cave. However, in order to obtain the ability, you must correctly answer a series of riddles.
-Live Site is:
+This is a small game/quiz that allows you to gain an ability in a magical cave. However, in order to obtain the ability, you must correctly answer a series of riddles. \
+![deployed heroku](assets/readme/deplyhero.png)
+
 [Live Link](https://riddle-my-ability-61bcefb6fcc4.herokuapp.com/)
 
 ---
@@ -162,46 +163,32 @@ Code then validated successfully.
 | Program start ascii logo                     | Run the program.                                 | Ascii art displayed, enter to continue...                                               | Ascii art displayed, enter to continue...                                               | <span style="color:green">PASS</span> |
 | What happens if i Press enter to continue... | Press enter to see what happens                  | I get presented with a welcome message with simple rules and press enter to continue... | I get presented with a welcome message with simple rules and press enter to continue... | <span style="color:green">PASS</span> |
 | Does the press enter work?                   | I press enter to continue... to see if it works. | It takes me to the part where i have to enter my name.                                  | It takes me to the part where i have to enter my name.                                  | <span style="color:green">PASS</span> |
+|Writing my name | I write in my name Birger and press enter. | It greets me with my name and asks to know what ability i want. | It greets me with my name and asks to know what ability i want. |  <span style="color:green">PASS</span> |
+| Writing in ability | I write in the ability to Fly and press enter. | It greets me with my name and ability, tells me some info and gives me the first riddle. |  It greets me with my name and ability, tells me some info and gives me the first riddle. | <span style="color:green">PASS</span> |
+| Answer the riddle. | I choose one of the options that i know is correct and press enter. | It tells me Correct answer and gives me the next riddle | It tells me Correct answer and gives me the next riddle | <span style="color:green">PASS</span> |
+| Answer riddle wrong. | I choose one of the options that i know is wrong and press enter | I reach a Game Over name screen, that tells me to enter y to try again or n to exit. | I reach a Game Over name screen, that tells me to enter y to try again or n to exit. | <span style="color:green">PASS</span> |
+| On Game Over choice try agin. | I choose the option to try again and enter 'y' | It restarts the riddle from question one again. |  It restarts the riddle from question one again. | <span style="color:green">PASS</span> |
+| On Game Over choice exit | I make a choice to exit the game and enter 'n' to exit | Game exits and gives a exit message. | Game exits and gives a exit message. | <span style="color:green">PASS</span> |
+| Answer all riddles right. | I try each riddle to make sure the right answer is the correct answer | All riddles have the correct answer. | All riddles have the correct answer. | <span style="color:green">PASS</span> |
+| Win the game. | I answer all riddles correct | I get to the victory screen, where you are greeted with your name and the ability written with ASCII art. |  I get to the victory screen, where you are greeted with your name and the ability written with ASCII art. | <span style="color:green">PASS</span> |
+| Enter only numeric name / ability | I write in an only numeric name / ability | I get an error message telling me the name cannot be purely numeric. | I get an error message telling me the name cannot be purely numeric. | <span style="color:green">PASS</span> |
+| Enter an empty/only blankstep name / ability |  I make two blanksteps in the name / ability input and hit enter. | It returns an error message that tells me the name / ability cannot be empty, this is because i use .strip() so the blanksteps is removed, therefore it is empty. | It returns an error message that tells me the name / ability cannot be empty, this is because i use .strip() so the blanksteps is removed, therefore it is empty. | <span style="color:green">PASS</span> |
+| A non existant answer to a riddle | I enter v as the answer | I get an error message telling me to chose a valid option. a,b,c or d | I get an error message telling me to chose a valid option. a,b,c or d | <span style="color:green">PASS</span> |
+| Exit from the answer input | I try and enter 'x' to exit from the answer input | Game exits and gives a exit message. | Game exits and gives a exit message. |  <span style="color:green">PASS</span> |
+|
 
-- Name / ability - enter nothing or just blankspaces.
 
-  > An error is presented as it should, ask you to write again.
 
-- Name / ability - enter only numbers.
+### Bugs and Fixes
 
-  > An error is presented as it should, ask you to write again.
-
-- Name / ability - enter a proper name or ability.
-
-  > Get to the next step. uppercase your firstletter. Works as intended.
-
-- Answer choices - insert something that is not a, b, c, d or x.
-
-  > An error is presented as it should, ask you to write again.
-
-- Answer choices - insert a, b, c, d or x.
-
-  > Verification works as intended, if right answer next riddle, if wrong answer. gameover! if x it closes the program.
-
-- Riddle test - correct_answer
-
-  > Riddles, all correct answer works.
-  > Answer all five riddles correct and the end function runs. as it should!
-
-- x for Exit
-  > Works as intended.
-
-### Buggs
-
-- Problem: when i insert a capitalized letter as answer it goes false even if its right!
-  - Solution: add .lower() to make sure the input is lowercased.
+- Problem: When i insert a capitalized letter as answer it gives wrong answer even if its the right one!
+  - Solution: add .lower() to make sure the input is lowercased before it is verified.
 - Problem: Its possible to bypass my checks by inserting blankspaces...
-  - Solution: Add .strip() behind the input to remove the blankspaces and it will be empty.
+  - Solution: Add .strip() behind the input to remove the blankspaces and it will be empty for the verification.
 - Problem: Answering question with the right answer but followed by a blankstep = error...
-  - Solution: solved with .strip() after the input.
-- Problem: When i add "os.system('cls' if os.name == 'nt' else 'clear')" to clear before name and ability it makes the
-  verification on the name and ability input stop working!
-  - Solution: Clearing it in another place.
+  - Solution: solved with .strip() after the answer input.
+- Problem: When i add the "os.system('cls' if os.name == 'nt' else 'clear')" that i use to clear the terminal before name and ability it makes the verification on the name and ability input stop working!
+  - Solution: I put it in a different place to make sure the verification checks is working properly.
 
 ---
 
