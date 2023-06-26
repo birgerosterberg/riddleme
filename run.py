@@ -239,6 +239,7 @@ def riddleme(name, ability):
         )
         ability_art = pyfiglet.figlet_format(ability.capitalize())
         print(ability_art + Style.RESET_ALL)
+        exit()
 
     def ask_riddle():
         """
@@ -272,12 +273,26 @@ def riddleme(name, ability):
 
                     elif result is False:
                         how_many_riddles = 0
-                        input(
-                            f"{name.capitalize()} you answered wrong, "
-                            "you are not worthy "
-                            "please press enter to leave!: \n"
-                        ).lower()
-                        print("if you got this wrong try again!")
+                        os.system('cls' if os.name == 'nt' else 'clear')
+                        print(f"Game Over {name.capitalize()}!")
+                        while True:
+                            gameover = input(
+                                "Please enter 'y' to try again or 'n' to exit!: \n"
+                            ).lower()
+                            if gameover == 'y':
+                                ask_riddle()
+                                break
+                            elif gameover == 'n':
+                                exit()
+                            else:
+                                os.system('cls' if os.name ==
+                                          'nt' else 'clear')
+                                print(
+                                    Fore.RED +
+                                    "Not valid input.\n"
+                                    + Style.RESET_ALL
+                                )
+
                     elif result is None:
                         print(
                             f"Leaving! Bye bye {name.capitalize()}.\n"
