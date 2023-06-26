@@ -68,7 +68,7 @@ def display_welcome():
     """
 
     print(
-        Fore.BLUE +
+        Fore.CYAN +
         "Welcome to the Cave of Mysteries! I have an amazing gift for you.\n")
     print(
         "I can grant you an ability of your choice, "
@@ -154,7 +154,7 @@ def get_name_ability():
                 continue
     clear_screen()
     print(
-        Fore.BLUE +
+        Fore.CYAN +
         f"Okey, {name.capitalize()}, "
         f"i see you wish to have the ability to {ability.capitalize()}.\n"
     )
@@ -297,7 +297,7 @@ def riddleme(name, ability):
                                     f"Leaving! Bye bye {name.capitalize()}.\n"
                                     "now you wont get the ability to "
                                     f"{ability.capitalize()}."
-                                    )
+                                )
                                 exit()
                             else:
                                 clear_screen()
