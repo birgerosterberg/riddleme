@@ -108,6 +108,7 @@ def get_name_ability():
                 + Style.RESET_ALL
             )
             name = input("Enter your name: \n").strip()
+            clear_screen()
             if not name:
                 print(
                     Fore.RED +
@@ -122,8 +123,6 @@ def get_name_ability():
                 )
                 name = ""
                 continue
-
-        clear_screen()
 
         if not ability:
             print(
