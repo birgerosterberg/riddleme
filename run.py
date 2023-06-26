@@ -46,7 +46,7 @@ def give_riddle(riddle, choices, correct_answer):
                     Fore.RED +
                     "Invalid input, chose a valid option: a, b, c, or d\n"
                     + Style.RESET_ALL
-                    )
+                )
         except ValueError as error:
             print(error)
 
@@ -67,16 +67,16 @@ def riddleme():
     print(
         "I can grant you an ability of your choice, "
         "but first,\nyou must prove yourself worthy.\n"
-        )
+    )
     print(
         "Answer these riddles correctly, and you will prove yourself!\n"
-          )
+    )
     print("The rules are very simple...")
     print("You have only one try to get it right.")
     print(
         "You will get 4 choices to choose from.\n"
         + Style.RESET_ALL
-         )
+    )
     input("Press enter to continue...\n")
     os.system('cls' if os.name == 'nt' else 'clear')
     name = ""
@@ -93,7 +93,7 @@ def riddleme():
                 Style.DIM +
                 "It cannot be empty or only contain numbers!\n"
                 + Style.RESET_ALL
-                )
+            )
             name = input("Enter your name: \n").strip()
             if not name:
                 print(
@@ -106,7 +106,7 @@ def riddleme():
                     Fore.RED +
                     "Name cannot be purely numeric. Please try again.\n"
                     + Style.RESET_ALL
-                    )
+                )
                 name = ""
                 continue
 
@@ -114,28 +114,28 @@ def riddleme():
             print(
                 Fore.CYAN +
                 f"{name.capitalize()} in order to proceed, "
-                "please let me know which ability "
+                "please let me know which ability \n"
                 "you would like to receive.\n"
             )
             print(
                 Style.DIM +
                 "It cannot be empty or only contain numbers!\n"
                 + Style.RESET_ALL
-                )
+            )
             ability = input("Enter your ability: \n").strip()
             if not ability:
                 print(
                     Fore.RED +
                     "Ability cannot be empty. Please try again.\n"
                     + Style.RESET_ALL
-                    )
+                )
                 continue
             if ability.isdigit():
                 print(
                     Fore.RED +
                     "Ability cannot be purely numeric. Please try again.\n"
                     + Style.RESET_ALL
-                    )
+                )
                 ability = ""
                 continue
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -143,13 +143,13 @@ def riddleme():
         Fore.BLUE +
         f"Okey, {name.capitalize()}, "
         f"i see you wish to have the ability to {ability.capitalize()}.\n"
-        )
+    )
     print("Great Choice!")
     print(
-        "But to be able to keep this ability you need to pass a few riddles, "
+        "But to be able to keep this ability you need to pass a few riddles, \n"
         "to be worthy!\n"
         + Style.RESET_ALL
-        )
+    )
 
     # Where i store the riddles
     riddles = [
@@ -224,7 +224,7 @@ def riddleme():
             f"{name.capitalize()} this is a truly remarkable day, you have "
             "proven to be worthy,\nits with great responsibility "
             "i grant you the ability to"
-            )
+        )
         ability_art = pyfiglet.figlet_format(ability.capitalize())
         print(ability_art + Style.RESET_ALL)
 
@@ -245,14 +245,14 @@ def riddleme():
                         riddle["riddle"],
                         riddle["choices"],
                         riddle["correct_answer"]
-                        )
+                    )
 
                     if result is True:
                         how_many_riddles += 1
                         print(
                             Fore.GREEN + "Correct answer!\n"
                             + Style.RESET_ALL
-                              )
+                        )
                         if how_many_riddles == 5:
                             ability_granted()
                             return
@@ -271,12 +271,12 @@ def riddleme():
                             f"Leaving! Bye bye {name.capitalize()}.\n"
                             "now you wont get the ability to "
                             f"{ability.capitalize()}."
-                            )
+                        )
                         return
                     else:
                         raise ValueError(
                             "Something went very wrong?!"
-                            )
+                        )
                 except ValueError as error:
                     print(error)
     ask_riddle()
