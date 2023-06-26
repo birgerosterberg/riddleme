@@ -245,7 +245,7 @@ The below steps were followed to deploy this project to Heroku:
 
 ---
 
-## Inspiration, tutorials and content from:
+## Credits, inspiration, tutorials and content from:
 
 - https://realpython.com/python-quiz-application/ - Much inspiration gathered from this source.
 - https://medium.com/@rahulmallah785671/creating-an-engaging-quiz-game-with-python-a-step-by-step-guide-ea11bd76f159 - the idea of list with dictionary comes from here.
@@ -253,10 +253,6 @@ The below steps were followed to deploy this project to Heroku:
 - https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/ - the pyfiglet ascii module is from here and my mentor.
 - https://www.geeksforgeeks.org/clear-screen-python/ - the clear screen is straight from here and my mentor.
 - https://play.howstuffworks.com/quiz/test-your-mental-mettle-with-these-ridiculous-riddles - most riddles and answers is from here.
+- My mentor Gareth McGill \
+- https://www.stackoverflow.com/ - all the amazing contributors making life easy for everyone else!
 
----
-
-## Credits
-
-My mentor Gareth McGill \
-https://www.stackoverflow.com/ - all the amazing contributors making life easy for everyone else!
