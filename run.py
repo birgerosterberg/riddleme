@@ -11,14 +11,19 @@ import pyfiglet
 # Colorama to color the text in the console
 from colorama import Fore, Style
 
-# clear screen from the os import!
-os.system('cls' if os.name == 'nt' else 'clear')
+
+def clear_screen():
+    """
+    Function to clear the screen.
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 # Ascii art from the pyfiglet import!
 ascii_art = pyfiglet.figlet_format("Riddle Me!", font="banner3-D")
 print(ascii_art)
 input("Press enter to continue...\n")
-os.system('cls' if os.name == 'nt' else 'clear')
+clear_screen()
 
 
 def give_riddle(riddle, choices, correct_answer):
@@ -51,6 +56,7 @@ def give_riddle(riddle, choices, correct_answer):
             print(error)
 
     if answer == correct_answer:
+        clear_screen()
         return True
     else:
         return False
@@ -78,7 +84,7 @@ def display_welcome():
         + Style.RESET_ALL
     )
     input("Press enter to continue...\n")
-    os.system('cls' if os.name == 'nt' else 'clear')
+    clear_screen()
     get_name_ability()
 
 
@@ -117,6 +123,8 @@ def get_name_ability():
                 name = ""
                 continue
 
+        clear_screen()
+
         if not ability:
             print(
                 Fore.CYAN +
@@ -144,7 +152,7 @@ def get_name_ability():
                 )
                 ability = ""
                 continue
-    os.system('cls' if os.name == 'nt' else 'clear')
+    clear_screen()
     print(
         Fore.BLUE +
         f"Okey, {name.capitalize()}, "
@@ -209,7 +217,7 @@ def riddleme(name, ability):
             "choices":
                 ["a. A Match",
                  "b. Candle",
-                 "c. A Match",
+                 "c. Both of them",
                  "d. None of the above"],
 
             "correct_answer": "a"
@@ -230,7 +238,7 @@ def riddleme(name, ability):
     ]
 
     def ability_granted():
-        os.system('cls' if os.name == 'nt' else 'clear')
+        clear_screen()
         print(
             Fore.CYAN +
             f"{name.capitalize()} this is a truly remarkable day, you have "
@@ -273,26 +281,26 @@ def riddleme(name, ability):
 
                     elif result is False:
                         how_many_riddles = 0
-                        os.system('cls' if os.name == 'nt' else 'clear')
+                        clear_screen()
                         print(f"Game Over {name.capitalize()}!")
                         while True:
                             gameover = input(
                                 "Please enter 'y' to try again or "
                                 "'n' to exit!: \n"
                             ).lower()
+                            clear_screen()
                             if gameover == 'y':
                                 ask_riddle()
                                 break
                             elif gameover == 'n':
-                                        print(
-                                            f"Leaving! Bye bye {name.capitalize()}.\n"
-                                            "now you wont get the ability to "
-                                            f"{ability.capitalize()}."
-                                        )
-                                        exit()
+                                print(
+                                    f"Leaving! Bye bye {name.capitalize()}.\n"
+                                    "now you wont get the ability to "
+                                    f"{ability.capitalize()}."
+                                    )
+                                exit()
                             else:
-                                os.system('cls' if os.name ==
-                                          'nt' else 'clear')
+                                clear_screen()
                                 print(
                                     Fore.RED +
                                     "Not valid input.\n"
