@@ -113,9 +113,9 @@ This is a small game/quiz that allows you to gain ability in a magical cave. How
 
 #### Wrong Answer
 
-    - When you answer wrong you will be thrown out of the game since you have one chance to make it!
+    - When you answer wrong you will be given a chance to go again, or exit!
 
-![riddle wrong](assets/readme/riddlewrong.png)
+![riddle wrong](assets/readme/gota.png)
 
 ---
 
@@ -177,18 +177,18 @@ Code then validated successfully.
 | Exit from the answer input | I try and enter 'x' to exit from the answer input | Game exits and gives a exit message. | Game exits and gives a exit message. |  <span style="color:green">PASS</span> |
 |
 
-
+---
 
 ### Bugs and Fixes
 
-- Problem: When i insert a capitalized letter as answer it gives wrong answer even if its the right one!
-  - Solution: add .lower() to make sure the input is lowercased before it is verified.
-- Problem: Its possible to bypass my checks by inserting blankspaces...
-  - Solution: Add .strip() behind the input to remove the blankspaces and it will be empty for the verification.
-- Problem: Answering question with the right answer but followed by a blankstep = error...
-  - Solution: solved with .strip() after the answer input.
-- Problem: When i add the "os.system('cls' if os.name == 'nt' else 'clear')" that i use to clear the terminal before name and ability it makes the verification on the name and ability input stop working!
-  - Solution: I put it in a different place to make sure the verification checks is working properly.
+- **Problem**: When i insert a capitalized letter as answer it gives wrong answer even if its the right one!
+  - **Solution**: add .lower() to make sure the input is lowercased before it is verified.
+- **Problem**: Its possible to bypass my checks by inserting blankspaces...
+  - **Solution**: Add .strip() behind the input to remove the blankspaces and it will be empty for the verification.
+- **Problem**: Answering question with the right answer but followed by a blankstep = error...
+  - **Solution**: solved with .strip() after the answer input.
+- **Problem**: When i add the "os.system('cls' if os.name == 'nt' else 'clear')" that i use to clear the terminal before name and ability it makes the verification on the name and ability input stop working!
+  - **Solution**: I put it in a different place to make sure the verification checks is working properly.
 
 ---
 
