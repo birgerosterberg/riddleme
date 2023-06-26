@@ -203,9 +203,9 @@ By structuring the riddles as dictionaries within a list, i have created an easi
 - Python
   - The logic was created using Python.
   - Packages used:
-    - OS
-    - Pyfiglet
-    - Colorama
+    - OS - Used to clear the screen depending on the OS used, cls or clear.
+    - Pyfiglet - Used to easy add Ascii art creation on words.
+    - Colorama - Used for a simple way to put color usage into the terminal.
 - Visual Studio Code
   - The website was developed with Visual Studio Code as the IDE.
 - GitHub
