@@ -136,6 +136,7 @@ def get_name_ability():
                 + Style.RESET_ALL
             )
             ability = input("Enter your ability: \n").strip()
+            clear_screen()
             if not ability:
                 print(
                     Fore.RED +
