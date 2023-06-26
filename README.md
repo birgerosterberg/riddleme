@@ -47,6 +47,8 @@ This is a small game/quiz that allows you to gain ability in a magical cave. How
 
 ### HTML / CSS
 
+The console interface created by Code Institute is used to present my project in a browser.
+
 ---
 
 ### Terminal
