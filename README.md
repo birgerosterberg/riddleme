@@ -2,7 +2,7 @@
 
 This is a small game/quiz that allows you to gain an ability in a magical cave. However, in order to obtain the ability, you must correctly answer a series of riddles.
 Live Site is:
-https://riddle-my-ability-61bcefb6fcc4.herokuapp.com/
+[Live Link](https://riddle-my-ability-61bcefb6fcc4.herokuapp.com/)
 
 ---
 
@@ -240,7 +240,8 @@ The below steps were followed to deploy this project to Heroku:
 - Navigate to Buildpacks and add buildpacks for Python and NodeJS (in that order).
 - Navigate to "Deploy". Set the deployment method to Github and enter repository name and connect.
 - Scroll down to Manual Deploy, select "main" branch and click "Deploy Branch".
-- The app will now be deployed to heroku
+- The app will now be deployed to heroku \
+  [Heroku Live Link](https://riddle-my-ability-61bcefb6fcc4.herokuapp.com/)
 
 ---
 
