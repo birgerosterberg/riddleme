@@ -150,6 +150,11 @@ By structuring the riddles as dictionaries within a list, i have created an easi
 
 ## Testing
 
+### PEP8
+
+All python code was ran through [PEP8 CI](https://pep8ci.herokuapp.com/) validator and any warnings or errors were fixed. \
+Code then validated successfully.
+
 ### Input testing
 
 - Name / ability - enter nothing or just blankspaces.

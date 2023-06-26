@@ -277,7 +277,8 @@ def riddleme(name, ability):
                         print(f"Game Over {name.capitalize()}!")
                         while True:
                             gameover = input(
-                                "Please enter 'y' to try again or 'n' to exit!: \n"
+                                "Please enter 'y' to try again or "
+                                "'n' to exit!: \n"
                             ).lower()
                             if gameover == 'y':
                                 ask_riddle()
