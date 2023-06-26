@@ -161,7 +161,7 @@ def get_name_ability():
     print("Great Choice!")
     print(
         "But to be able to keep this ability you need to pass a few riddles,\n"
-        " to be worthy!\n"
+        "to be worthy!\n"
         + Style.RESET_ALL
     )
     return riddleme(name, ability)
@@ -293,6 +293,7 @@ def riddleme(name, ability):
                                 ask_riddle()
                                 break
                             elif gameover == 'n':
+                                clear_screen()
                                 print(
                                     f"Leaving! Bye bye {name.capitalize()}.\n"
                                     "now you wont get the ability to "
@@ -308,6 +309,7 @@ def riddleme(name, ability):
                                 )
 
                     elif result is None:
+                        clear_screen()
                         print(
                             f"Leaving! Bye bye {name.capitalize()}.\n"
                             "now you wont get the ability to "
