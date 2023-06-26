@@ -155,7 +155,13 @@ By structuring the riddles as dictionaries within a list, i have created an easi
 All python code was ran through [PEP8 CI](https://pep8ci.herokuapp.com/) validator and any warnings or errors were fixed. \
 Code then validated successfully.
 
-### Input testing
+### Functional testing
+
+| Description                                  | Steps                                            | Expected                                                                                | Actual                                                                                  | RESULT                                |
+| -------------------------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------- |
+| Program start ascii logo                     | Run the program.                                 | Ascii art displayed, enter to continue...                                               | Ascii art displayed, enter to continue...                                               | <span style="color:green">PASS</span> |
+| What happens if i Press enter to continue... | Press enter to see what happens                  | I get presented with a welcome message with simple rules and press enter to continue... | I get presented with a welcome message with simple rules and press enter to continue... | <span style="color:green">PASS</span> |
+| Does the press enter work?                   | I press enter to continue... to see if it works. | It takes me to the part where i have to enter my name.                                  | It takes me to the part where i have to enter my name.                                  | <span style="color:green">PASS</span> |
 
 - Name / ability - enter nothing or just blankspaces.
 
