@@ -56,9 +56,9 @@ def give_riddle(riddle, choices, correct_answer):
         return False
 
 
-def riddleme():
+def display_welcome():
     """
-    The main game function, that runs the riddleme game!
+    Displays the first welcome screen!
     """
 
     print(
@@ -79,8 +79,16 @@ def riddleme():
     )
     input("Press enter to continue...\n")
     os.system('cls' if os.name == 'nt' else 'clear')
+    get_name_ability()
+
+
+def get_name_ability():
+    """
+    Gets your name and ability!
+    """
     name = ""
     ability = ""
+
     # This while loop make sure that you insert a name and ability that is
     # legit to what i have told the program to do. and 'x' to exit!
     while not name or not ability:
@@ -90,7 +98,6 @@ def riddleme():
                 "First i need to know your name.\n"
             )
             print(
-                Style.DIM +
                 "It cannot be empty or only contain numbers!\n"
                 + Style.RESET_ALL
             )
@@ -118,7 +125,6 @@ def riddleme():
                 "you would like to receive.\n"
             )
             print(
-                Style.DIM +
                 "It cannot be empty or only contain numbers!\n"
                 + Style.RESET_ALL
             )
@@ -146,11 +152,17 @@ def riddleme():
     )
     print("Great Choice!")
     print(
-        "But to be able to keep this ability you need to pass a few riddles, \n"
-        "to be worthy!\n"
+        "But to be able to keep this ability you need to pass a few riddles,\n"
+        " to be worthy!\n"
         + Style.RESET_ALL
     )
+    return riddleme(name, ability)
 
+
+def riddleme(name, ability):
+    """
+    The main game function, that runs the riddleme game!
+    """
     # Where i store the riddles
     riddles = [
         {
@@ -220,7 +232,7 @@ def riddleme():
     def ability_granted():
         os.system('cls' if os.name == 'nt' else 'clear')
         print(
-            Fore.BLUE +
+            Fore.CYAN +
             f"{name.capitalize()} this is a truly remarkable day, you have "
             "proven to be worthy,\nits with great responsibility "
             "i grant you the ability to"
@@ -265,14 +277,14 @@ def riddleme():
                             "you are not worthy "
                             "please press enter to leave!: \n"
                         ).lower()
-                        return
+                        print("if you got this wrong try again!")
                     elif result is None:
                         print(
                             f"Leaving! Bye bye {name.capitalize()}.\n"
                             "now you wont get the ability to "
                             f"{ability.capitalize()}."
                         )
-                        return
+                        exit()
                     else:
                         raise ValueError(
                             "Something went very wrong?!"
@@ -282,4 +294,12 @@ def riddleme():
     ask_riddle()
 
 
-riddleme()
+def main():
+    """
+    The function runs the game!
+    Firstly displays the welcome message!
+    """
+    display_welcome()
+
+
+main()
